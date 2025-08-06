@@ -8,7 +8,7 @@ services:
   redis:
     image: redis:7.2-alpine
     ports:
-      - "6379:6379"
+      - "6319:6379"
     volumes:
       - mine_redis_data:/data
     command: redis-server --appendonly yes
@@ -29,7 +29,7 @@ services:
     volumes:
       - mine_mysql_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3316:3306"
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -44,8 +44,8 @@ services:
       - ./:/www
     working_dir: /www
     ports:
-      - "9501:9501"
-      - "9503:9503"
+      - "9510:9510"
+      - "9511:9511"
     environment:
       - TZ=Asia/Shanghai
       - APP_NAME=MineAdmin
